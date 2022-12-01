@@ -1,0 +1,16 @@
+package day
+
+type DayX struct {
+}
+
+func (d *DayX) Init() error {
+	return nil
+}
+
+func (d *DayX) Step1() (int, error) {
+	return 0, nil
+}
+
+func (d *DayX) Step2() (int, error) {
+	return 0, nil
+}
