@@ -21,6 +21,7 @@ func main() {
 
 	days := []day.Day{
 		{Runner: &day.Day1{}, Name: "day1", Kind: kind},
+		{Runner: &day.Day2{}, Name: "day2", Kind: kind},
 	}
 
 	n, errAtoi := strconv.Atoi(os.Args[1])
@@ -34,7 +35,7 @@ func main() {
 		log.Fatalln("day not found: ", n)
 	}
 
-	fmt.Printf("run day %d with %s \r\n", n, input)
+	fmt.Printf("run day %d with %s inputs \r\n", n, kind)
 	days[index].Init()
 	fmt.Println(days[index].Step1())
 	fmt.Println(days[index].Step2())
