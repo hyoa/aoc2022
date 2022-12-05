@@ -7,10 +7,10 @@ func (d *DayX) Init(path string) error {
 	return nil
 }
 
-func (d *DayX) Step1() (int, error) {
-	return 0, nil
+func (d *DayX) Step1() (Result, error) {
+	return Result{}, nil
 }
 
-func (d *DayX) Step2() (int, error) {
-	return 0, nil
+func (d *DayX) Step2() (Result, error) {
+	return Result{}, nil
 }
