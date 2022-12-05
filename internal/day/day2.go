@@ -49,7 +49,7 @@ func (d *Day2) Init(path string) error {
 	return nil
 }
 
-func (d *Day2) Step1() (int, error) {
+func (d *Day2) Step1() (Result, error) {
 	tt := 0
 	for _, roundShapes := range d.data {
 		shapes := strings.Split(roundShapes, " ")
@@ -60,10 +60,13 @@ func (d *Day2) Step1() (int, error) {
 		tt += int(outcome) + ShapeValue[meShape]
 	}
 
-	return tt, nil
+	return Result{
+		Value: tt,
+		Kind:  ResultKindInt,
+	}, nil
 }
 
-func (d *Day2) Step2() (int, error) {
+func (d *Day2) Step2() (Result, error) {
 	tt := 0
 	for _, roundShapes := range d.data {
 		shapes := strings.Split(roundShapes, " ")
@@ -80,7 +83,10 @@ func (d *Day2) Step2() (int, error) {
 		}
 	}
 
-	return tt, nil
+	return Result{
+		Kind:  ResultKindInt,
+		Value: tt,
+	}, nil
 }
 
 func (d *Day2) outcomeRound(me, opponent ShapeKind) Outcome {

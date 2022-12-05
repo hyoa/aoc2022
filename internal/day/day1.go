@@ -15,13 +15,16 @@ func (d *Day1) Init(path string) error {
 	return nil
 }
 
-func (d *Day1) Step1() (int, error) {
+func (d *Day1) Step1() (Result, error) {
 	caloriesByElves := getTotalCaloriesByElves(d.data)
 
-	return caloriesByElves[len(caloriesByElves)-1], nil
+	return Result{
+		Kind:  ResultKindInt,
+		Value: caloriesByElves[len(caloriesByElves)-1],
+	}, nil
 }
 
-func (d *Day1) Step2() (int, error) {
+func (d *Day1) Step2() (Result, error) {
 	caloriesByElves := getTotalCaloriesByElves(d.data)
 
 	tt := 0
@@ -29,7 +32,10 @@ func (d *Day1) Step2() (int, error) {
 		tt += c
 	}
 
-	return tt, nil
+	return Result{
+		Kind:  ResultKindInt,
+		Value: tt,
+	}, nil
 }
 
 func getTotalCaloriesByElves(data []string) []int {

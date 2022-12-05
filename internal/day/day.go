@@ -6,10 +6,13 @@ import (
 )
 
 type InputKind string
+type ResultKind string
 
 const (
-	InputKindExample InputKind = "example"
-	InputKindReal    InputKind = "real"
+	InputKindExample InputKind  = "example"
+	InputKindReal    InputKind  = "real"
+	ResultKindInt    ResultKind = "int"
+	ResultKindString ResultKind = "string"
 )
 
 type Day struct {
@@ -20,8 +23,13 @@ type Day struct {
 
 type Runnable interface {
 	Init(path string) error
-	Step1() (int, error)
-	Step2() (int, error)
+	Step1() (Result, error)
+	Step2() (Result, error)
+}
+
+type Result struct {
+	Kind  ResultKind
+	Value interface{}
 }
 
 func (d *Day) InputPath() string {
@@ -37,10 +45,10 @@ func (d *Day) Init() error {
 	return d.Runner.Init(d.InputPath())
 }
 
-func (d *Day) Step1() (int, error) {
+func (d *Day) Step1() (Result, error) {
 	return d.Runner.Step1()
 }
 
-func (d *Day) Step2() (int, error) {
+func (d *Day) Step2() (Result, error) {
 	return d.Runner.Step2()
 }

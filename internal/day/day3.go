@@ -14,7 +14,7 @@ func (d *Day3) Init(path string) error {
 	return nil
 }
 
-func (d *Day3) Step1() (int, error) {
+func (d *Day3) Step1() (Result, error) {
 	tt := 0
 	for _, content := range d.data {
 		cSplit := strings.Split(content, "")
@@ -26,10 +26,13 @@ func (d *Day3) Step1() (int, error) {
 		}
 	}
 
-	return tt, nil
+	return Result{
+		Kind:  ResultKindInt,
+		Value: tt,
+	}, nil
 }
 
-func (d *Day3) Step2() (int, error) {
+func (d *Day3) Step2() (Result, error) {
 	tt := 0
 
 	for i := 0; i < len(d.data); i += 3 {
@@ -41,7 +44,10 @@ func (d *Day3) Step2() (int, error) {
 		}
 	}
 
-	return tt, nil
+	return Result{
+		Kind:  ResultKindInt,
+		Value: tt,
+	}, nil
 }
 
 func intersectSlice(s1, s2 []string) []string {

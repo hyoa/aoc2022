@@ -20,7 +20,7 @@ func (d *Day4) Init(path string) error {
 	return nil
 }
 
-func (d *Day4) Step1() (int, error) {
+func (d *Day4) Step1() (Result, error) {
 	count := 0
 	for _, assignment := range d.assignments {
 		elves := strings.Split(assignment, ",")
@@ -30,10 +30,13 @@ func (d *Day4) Step1() (int, error) {
 		}
 	}
 
-	return count, nil
+	return Result{
+		Kind:  ResultKindInt,
+		Value: count,
+	}, nil
 }
 
-func (d *Day4) Step2() (int, error) {
+func (d *Day4) Step2() (Result, error) {
 	count := 0
 	for _, assignment := range d.assignments {
 		elves := strings.Split(assignment, ",")
@@ -43,7 +46,10 @@ func (d *Day4) Step2() (int, error) {
 		}
 	}
 
-	return count, nil
+	return Result{
+		Kind:  ResultKindInt,
+		Value: count,
+	}, nil
 }
 
 func getSection(assignment string) section {

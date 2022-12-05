@@ -12,8 +12,8 @@ func TestDay(t *testing.T) {
 
 	type testCase struct {
 		day           day.Day
-		step1Expected int
-		step2Expected int
+		step1Expected interface{}
+		step2Expected interface{}
 	}
 
 	cases := []testCase{
@@ -33,8 +33,8 @@ func TestDay(t *testing.T) {
 				t.Error(err1)
 			}
 
-			if c.step1Expected != res1 {
-				t.Errorf("entry 1: expected %d got %d", c.step1Expected, res1)
+			if c.step1Expected != res1.Value {
+				t.Errorf("entry 1: expected %d got %d", c.step1Expected, res1.Value)
 			}
 
 			res2, err2 := c.day.Step2()
@@ -43,8 +43,8 @@ func TestDay(t *testing.T) {
 				t.Error(err2)
 			}
 
-			if c.step2Expected != res2 {
-				t.Errorf("entry 2: expected %d got %d", c.step2Expected, res2)
+			if c.step2Expected != res2.Value {
+				t.Errorf("entry 2: expected %d got %d", c.step2Expected, res2.Value)
 			}
 		})
 	}
