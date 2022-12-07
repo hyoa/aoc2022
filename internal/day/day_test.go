@@ -22,6 +22,7 @@ func TestDay(t *testing.T) {
 		{day: day.Day{Kind: day.InputKindExample, Runner: &day.Day3{}, Name: "day3"}, step1Expected: 157, step2Expected: 70},
 		{day: day.Day{Kind: day.InputKindExample, Runner: &day.Day4{}, Name: "day4"}, step1Expected: 2, step2Expected: 4},
 		{day: day.Day{Kind: day.InputKindExample, Runner: &day.Day5{}, Name: "day5"}, step1Expected: "CMZ", step2Expected: "MCD"},
+		{day: day.Day{Kind: day.InputKindExample, Runner: &day.Day6{}, Name: "day6"}, step1Expected: 11, step2Expected: 26},
 	}
 
 	for _, c := range cases {
