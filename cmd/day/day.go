@@ -27,6 +27,7 @@ func main() {
 		{Runner: &day.Day5{}, Name: "day5", Kind: kind},
 		{Runner: &day.Day6{}, Name: "day6", Kind: kind},
 		{Runner: &day.Day7{}, Name: "day7", Kind: kind},
+		{Runner: &day.Day8{}, Name: "day8", Kind: kind},
 	}
 
 	n, errAtoi := strconv.Atoi(os.Args[1])
